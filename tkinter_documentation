@@ -1,0 +1,107 @@
+Tkinter Documentation
+
+from tkinter import *
+import tkinter as Tk
+
+How to call tkinter window
+root = Tk()
+root.title("") - title of the window
+root.geometry("numxnum") - fixed size of the Window
+
+Label
+myLabel = Label(root, text="Hello World")
+relief = SUNKEN, ETC?
+anchor = W'est'-E'ast'-N'orth'-S'outh'	
+
+Packing
+myLabel.pack()
+
+Running Tkinter
+root.mainloop()
+
+Grid
+myLabel.grid(row=0,column=0,padx,pady)
+
+Button
+myButton = Button(root, text="Click Me",command='function' without ())
+	text-color [fg = 'color or #hexcolor']
+	button-color [bg = 'color/hex']
+	state = DISABLED, ENABLED
+
+Entry
+e = Entry(root,width,borderwidth)
+e.get() - gets the value
+	-pass it to a label
+	#Label(root, val + e.get())
+e.delete(0,END) - deletes the entry value
+e.insert(0,str)
+
+Icon
+root.iconbitmap('PATH/icon.ico')
+
+Image - PIL
+from PIL import ImageTk
+my_img = ImageTk.PhotoImage(Image.open("imgfilename"))
+	-If the image is inside the function
+	call "global my_img" -> first
+
+Image - Pillow
+from Pillow import *
+	-you must install pillow first
+	-pip3 install pillow
+
+Frame
+#with Border Margin
+framevar = LabelFrame(root, text="this is my frame",padx=var,pady=var)
+-----------------------------------------
+#without Border Margin
+framevar = Frame(root, text="this is my frame",padx=var,pady=var)
+
+Radiobutton
+Radiobutton(root, text="txt",variable=var,value=val,command=lambda: clicked(r.get())).pack()
+
+MessageBoxes
+from tkinter import messagebox
+------------------------------
+#showinfo, showwarning, showerror, askquestion,
+askokcancel, askyesno
+messagebox.showinfo('Message','Hello World')
+messagebox.showwarning('Warning','Authentication Blocked')
+messagebox.showerror('ERROR 404!','Not Found')
+
+Ex.code
+response = messagebox.askyesno('ERROR 404!','Not Found')
+response = messagebox.askquestion('ERROR 404!','Not Found')
+response = messagebox.askokcancel('ERROR 404!','Not Found')
+each of these response return 1,0 or yes,no
+
+New Window
+top = Toplevel() -> use it like a root
+
+File Dialog Box
+from tkinter import filedialog
+----------------------------------
+root.filename = filedialog.askopenfilename(initialdir="/",title="Select A File",filetypes(("PNG Files","*.png"),("All Files","*.*")))
+
+Sliders
+vertical = Scale(root, from=0, to=200)
+-orient=HORIZONTAL
+-vertical.get()
+
+Checkbox
+---var = IntVar()
+c = Checkbutton(root, text="txt",variable=var, onvalue=val, offvalue=val)
+c.deselect()
+
+Dropdown Boxes
+--var = DataTypeVar ()
+drop = OptionMenu(root, var, "txt","txt2")
+--var.set("Monday")
+
+Listbox and Scrollbar
+//listbox = Listbox(root)
+//listbox.pack(side=LEFT,fill=BOTH)
+//scrollx = Scrollbar(root)
+//listbox.config(yscrollcommand=scrollx.set)
+//scrollx.config(command=listbox.yview)
+listbox.delete(range)

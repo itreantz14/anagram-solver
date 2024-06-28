@@ -1,0 +1,17 @@
+MY FIRST PROJECT (SMALL PROJECT) - 
+ANAGRAM SOLVER
+
+-What is Anagram Solver ?
+	-When you enter random alphabet, a word which is known as "shuffled word". What the anagram solver does is looking for the shortest to longest word by using the "shuffled word' by solving it using an algorithm for word arrangement and forming those "words" that exists in a dictionary file.
+
+-Why did you create Anagram Solver ?
+	-It is to ease the searching and looking for a shuffled word
+	as a cheating for game called "Bookworm Adventures".
+
+-What can my Anagram Solver do ?
+	-You can easily look for a word which is shuffled.
+
+-Explain your project in a sequential and chronological way:
+	1. Input all your shuffled letters/characters to the Entry
+	2. You must choose a range from 3-15
+	3. Now you can click the search
